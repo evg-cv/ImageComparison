@@ -1,12 +1,8 @@
-# Image Comparison
+# ImageComparison
 
 ## Overview
 
-This project is to estimate similarity of two images, one of which is an newly uploaded image from site and other of which is an image in the database.
-
-Comparing the newly uploaded image with all the images in the database one by one, the image with the highest similarity and it's similarity degree are extracted.
-
-Then the result is displayed in http://imgcompare2.crevisio.com/, and if there is no similar image, it will display none result.
+This project is to estimate the similarities between the sample image and the other images and extract the image with the highest similarity. OpenCV, Tensorflow and deep learning models are used in this project.
 
 ## Structure
 
@@ -20,23 +16,21 @@ Then the result is displayed in http://imgcompare2.crevisio.com/, and if there i
 
 - main
 
-    This is the main execution file.
+    The main execution file.
 
 - requirements
     
-    All the dependencies to execute project are inserted.
+    All the dependencies for this project
 
 - settings
 
-    Several settings are conducted in this file
+    Several settings
 
 ## Installation
 
-- Python 3.6 environment
-
-- This project must be in the parent directory in php server.
-
-- The database credential file containing host name, database name, username and password should be added in utils directory. This file name can be either "mysql_credential.json" or changed in settings file.
+- Environment
+    
+    python 3.6, Windows 10, Ubuntu 18.04
 
 - Dependency installation
     
@@ -46,15 +40,9 @@ Then the result is displayed in http://imgcompare2.crevisio.com/, and if there i
 
 ## Execution
 
-When uploading new file, you must execute this python file with the newly uploaded image path. For example,
-    
-```
-$result = shell_exec('python /path/main.py ' . escapeshellarg(json_encode($data))); // $data: image frame path
-```
+- Please run the following command in the terminal.
 
-Then after estimating similarity of images, project returns the result. In the corresponding php file, the result will be able to be received.
+    ```
+    python3 app.py
+    ```
 
-```
-$resultData = json_decode($result, true);
-var_dump($resultData);
-```
